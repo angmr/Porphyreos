@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://zombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 65 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 16.5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.117647, 0.105882, 0.105882, 0.611765 )
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 9, 24 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 12, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0, 13, 5, 0, 14, 5, 0, 15, 5, 0, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 20, 5, 0, 21, 5, 0, 22, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 65549, 5, 0, 65550, 12, 0, 65551, 5, 0, 65552, 5, 0, 65553, 5, 0, 65554, 5, 0, 65555, 5, 0, 65556, 5, 0, 65557, 12, 0, 65558, 5, 0, 131072, 5, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 5, 0, 131078, 5, 0, 131079, 5, 0, 131080, 12, 0, 131081, 5, 0, 131082, 5, 0, 131083, 5, 0, 131084, 5, 0, 131085, 5, 0, 131086, 5, 0, 131087, 5, 0, 131088, 5, 0, 131089, 5, 0, 131090, 5, 0, 131091, 5, 0, 131092, 5, 0, 131093, 5, 0, 131094, 5, 0, 196608, 5, 0, 196609, 4, 0, 196610, 2, 0, 196611, 2, 0, 196612, 4, 0, 196613, 5, 0, 196614, 5, 0, 196615, 5, 0, 196616, 5, 0, 196617, 5, 0, 196618, 5, 0, 196619, 5, 0, 196620, 5, 0, 196621, 5, 0, 196622, 5, 0, 196623, 4, 0, 196624, 4, 0, 196625, 4, 0, 196626, 4, 0, 196627, 4, 0, 196628, 4, 0, 196629, 4, 0, 196630, 4, 0, 262144, 5, 0, 262145, 13, 0, 262146, 2, 0, 262147, 2, 0, 262148, 4, 0, 262149, 5, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 3, 0, 262161, 3, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 262165, 2, 0, 262166, 4, 0, 327680, 5, 0, 327681, 4, 0, 327682, 2, 0, 327683, 2, 0, 327684, 4, 0, 327685, 5, 0, 327686, 4, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 3, 0, 327696, 3, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 2, 0, 327701, 2, 0, 327702, 4, 0, 393216, 5, 0, 393217, 4, 0, 393218, 2, 0, 393219, 2, 0, 393220, 4, 0, 393221, 5, 0, 393222, 4, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 4, 0, 393234, 5, 0, 393235, 4, 0, 393236, 2, 0, 393237, 2, 0, 393238, 4, 0, 458752, 5, 0, 458753, 4, 0, 458754, 2, 0, 458755, 2, 0, 458756, 4, 0, 458757, 5, 0, 458758, 4, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 3, 0, 458768, 3, 0, 458769, 4, 0, 458770, 5, 0, 458771, 4, 0, 458772, 2, 0, 458773, 2, 0, 458774, 4, 0, 524288, 5, 0, 524289, 4, 0, 524290, 2, 0, 524291, 2, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 4, 0, 524306, 5, 0, 524307, 4, 0, 524308, 2, 0, 524309, 2, 0, 524310, 4, 0, 589824, 5, 0, 589825, 4, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 3, 0, 589831, 3, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 5, 0, 589843, 4, 0, 589844, 2, 0, 589845, 2, 0, 589846, 4, 0, 655360, 5, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 5, 0, 655379, 4, 0, 655380, 2, 0, 655381, 2, 0, 655382, 4, 0, 720896, 5, 0, 720897, 5, 0, 720898, 5, 0, 720899, 5, 0, 720900, 5, 0, 720901, 5, 0, 720902, 5, 0, 720903, 5, 0, 720904, 5, 0, 720905, 5, 0, 720906, 5, 0, 720907, 5, 0, 720908, 5, 0, 720909, 5, 0, 720910, 5, 0, 720911, 12, 0, 720912, 5, 0, 720913, 5, 0, 720914, 5, 0, 720915, 4, 0, 720916, 4, 0, 720917, 4, 0, 720918, 4, 0, 786432, 12, 0, 786433, 5, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 5, 0, 786438, 5, 0, 786439, 5, 0, 786440, 5, 0, 786441, 5, 0, 786442, 5, 0, 786443, 12, 0, 786444, 5, 0, 786445, 5, 0, 786446, 5, 0, 786447, 5, 0, 786448, 5, 0, 786449, 5, 0, 786450, 5, 0, 786451, 5, 0, 786452, 5, 0, 786453, 5, 0, 786454, 5, 0, 851968, 5, 0, 851969, 5, 0, 851970, 5, 0, 851971, 5, 0, 851972, 12, 0, 851973, 5, 0, 851974, 5, 0, 851975, 5, 0, 851976, 5, 0, 851977, 5, 0, 851978, 5, 0, 851979, 5, 0, 851980, 5, 0, 851981, 5, 0, 851982, 5, 0, 851983, 5, 0, 851984, 5, 0, 851985, 5, 0, 851986, 5, 0, 851987, 5, 0, 851988, 5, 0, 851989, 5, 0, 851990, 5, 0, 917504, 5, 0, 917505, 5, 0, 917506, 5, 0, 917507, 5, 0, 917508, 5, 0, 917509, 5, 0, 917510, 5, 0, 917511, 5, 0, 917512, 5, 0, 917513, 5, 0, 917514, 5, 0, 917515, 5, 0, 917516, 5, 0, 917517, 5, 0, 917518, 5, 0, 917519, 5, 0, 917520, 5, 0, 917521, 5, 0, 917522, 12, 0, 917523, 5, 0, 917524, 5, 0, 917525, 5, 0, 917526, 5, 0 )
+
+[node name="Zombie1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 380, 173 )
+
+[node name="Zombie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 380, 237 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 380, 205 )
+
+[node name="Zombie4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 380, 269 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+visible = false
+polygon = PoolVector2Array( 32, 64, 160, 64, 160, 256, 192, 256, 192, 128, 480, 128, 480, 96, 736, 96, 736, 384, 608, 384, 608, 192, 576, 192, 576, 320, 288, 320, 288, 352, 32, 352, 32, 160, 64, 160, 64, 320, 256, 320, 256, 288, 544, 288, 544, 160, 640, 160, 640, 352, 704, 352, 704, 128, 512, 128, 512, 160, 224, 160, 224, 288, 128, 288, 128, 96, 64, 96, 64, 128, 32, 128 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 100, 204 )
+player_speed = 8
+
+[node name="Borders" type="Area2D" parent="."]
+
+[node name="left" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 209, 223 )
+shape = SubResource( 1 )
+
+[node name="right" type="CollisionShape2D" parent="Borders"]
+position = Vector2( 560, 224 )
+shape = SubResource( 1 )
+
+[node name="Door" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2( 40, 144 )
+shape = SubResource( 2 )
+
+[node name="Door2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2( 56, 144.5 )
+shape = SubResource( 3 )
+
+[node name="DoorLockedMsg" type="Label" parent="Door2"]
+margin_left = 73.0
+margin_top = 123.0
+margin_right = 197.0
+margin_bottom = 138.0
+custom_colors/font_color = Color( 0.211765, 0.729412, 0, 1 )
+custom_styles/normal = SubResource( 4 )
+text = "The door is locked."
+
+[node name="Key" parent="." instance=ExtResource( 7 )]
+position = Vector2( 680, 264 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="WinTrigger" type="Area2D" parent="."]
+
+[node name="WinCollisionShape" type="CollisionShape2D" parent="WinTrigger"]
+position = Vector2( 16, 144 )
+shape = SubResource( 5 )
+
+[connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
+[connection signal="area_entered" from="Borders" to="." method="_on_Borders_area_entered"]
+[connection signal="body_entered" from="Door2" to="." method="_on_Door2_body_entered"]
+[connection signal="body_exited" from="Door2" to="." method="_on_Door2_body_exited"]
+[connection signal="collected" from="Key" to="." method="_on_Key_collected"]
+[connection signal="body_entered" from="WinTrigger" to="." method="_on_WinTrigger_body_entered"]
